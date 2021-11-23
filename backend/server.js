@@ -6,7 +6,7 @@ require('./passport')
 const path = require('path')
 
 const UserRouter = require('./routes/account')
-const isAuthenticated = require('../middlewares/isAuthenticated')
+const isAuthenticated = require('./middlewares/isAuthenticated')
 
 const app = express()
 
@@ -58,10 +58,6 @@ app.use(express.json())
 // app.use('/search', searchRouter)
 // app.use('/login', loginRouter)
 
-// app.use((err, req, res, next) => {
-//   res.status(500).send('There was an error!')
-// })
-
 app.get("/", (req, res) => {
   res.json({message: "You are not logged in"})
 })
@@ -99,13 +95,17 @@ app.get("/logout", (req, res) => {
 
 
 // set favicon
-app.get('/favicon.ico', (req, res) => {
-  res.status(404).send()
-})
+// app.get('/favicon.ico', (req, res) => {
+//   res.status(404).send()
+// })
 
 // set the initial entry point
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'))
+})
+
+app.use((err, req, res, next) => {
+  res.status(500).send('There was an error!')
 })
 
 // Start listening for requests

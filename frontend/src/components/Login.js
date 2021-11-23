@@ -12,6 +12,7 @@ const Login = () => {
       const { data } = await axios.post('/account/login', { email, password })
       if (data === 'user logged in successfully') {
         navigate('../')
+        console.log('logged in')
       } else {
         window.alert('login error! try again')
       }

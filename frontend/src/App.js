@@ -22,20 +22,20 @@ const App = () => {
   //   }
   // }
 
-  useEffect(async () => {
-    try {
-      const { data } = await axios.post('/account/isloggedin')
-      console.log(isLoggedIn)
-      if (data !== 'There was an error!') {
-        setCurrUser(data)
-        setIsLoggedIn(true)
-      } else {
-        setIsLoggedIn(false)
-      }
-    } catch (err) {
-      setIsLoggedIn(false)
-    }
-  }, [])
+  // useEffect(async () => {
+  //   try {
+  //     const { data } = await axios.post('/account/isloggedin')
+  //     console.log(isLoggedIn)
+  //     if (data !== 'There was an error!') {
+  //       setCurrUser(data)
+  //       setIsLoggedIn(true)
+  //     } else {
+  //       setIsLoggedIn(false)
+  //     }
+  //   } catch (err) {
+  //     setIsLoggedIn(false)
+  //   }
+  // }, [])
 
 
   return (
