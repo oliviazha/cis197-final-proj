@@ -1,0 +1,8 @@
+{
+  "adj": ["happy", "sad", "colorful", "unexpected", "magical", "independent", "delicate", "fluffy", "edgy", "dark", 
+    "stressed", "peaceful"],
+  "noun": ["cat", "dog", "the park", "stairs", "kitchen", "castle", "your favorite song", "girl", "city", "night", 
+    "dusk", "autumn"],
+  "verb": ["stargazing", "dancing", "running", "studying", "flying", "falling", "floating", "daydreaming", "laughing", "walking", 
+    "traveling", "reading"]
+}
