@@ -8,7 +8,7 @@ const Signup = () => {
   const navigate = useNavigate()
 
   const createUser = async () => {
-    const { data } = await axios.post('/account/signup', { username, password })
+    const { data } = await axios.post('/account/signup', { email, password })
     if (data === 'user created') {
       navigate('../')
     } else {
@@ -28,7 +28,7 @@ const Signup = () => {
       <input onChange={e => setPassword(e.target.value)} />
       <br />
       <button type="button" onClick={() => createUser()}> Sign Up </button>
-      <Link to="/google"> Join with Google!  </Link>
+      <a className="google-btn" href="/account/google">Join with Google</a>
       <p>
         Already have an account?&nbsp;
         <Link to="/login">Log in here!</Link>

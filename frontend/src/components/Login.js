@@ -33,7 +33,8 @@ const Login = () => {
       <input onChange={e => setPassword(e.target.value)} />
       <br />
       <button type="button" onClick={() => loginUser()}> Sign In </button>
-      <Link to="/google"> Sign in with Google</Link>
+      {/* <Link to="/account/google"> Sign in with Google</Link> */}
+      <a className="google-btn" href="/account/google">Sign in with Google</a>
       {/* <button type="button" onClick={() =>  }> Sign in with Google </button> */}
       <p>
         Don&apos;t have an account?&nbsp;

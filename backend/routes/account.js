@@ -1,17 +1,22 @@
 const express = require('express')
+const passport = require('passport')
 
 const router = express.Router()
 
 const User = require('../model/User')
 const isAuthenticated = require('../middlewares/isAuthenticated')
 
-// router.post('/isloggedin', isAuthenticated, (req, res) => {
-//   try {
-//     res.send(req.session.username)
-//   } catch (err) {
-//     res.status(200).send('not logged in')
-//   }
-// })
+router.post('/isloggedin', isAuthenticated, (req, res) => {
+  try {
+    if (req.session.email) {
+      res.send(req.session)
+    } else {
+      res.send(req.user)
+    }
+  } catch (err) {
+    res.status(200).send('not logged in')
+  }
+})
 
 // signup (create user)
 router.post('/signup', async (req, res) => {
@@ -37,6 +42,8 @@ router.post('/login', async (req, res) => {
       if (password === passDB) {
         req.session.email = email
         req.session.password = password
+        req.session.savedPrompts = user.savedPrompts
+        // res.send(req.session)
         res.send('user logged in successfully')
       } else {
         res.send('user credentials are wrong')
@@ -49,9 +56,38 @@ router.post('/login', async (req, res) => {
 
 // logout
 router.post('/logout', isAuthenticated, (req, res) => {
-  req.session.email = null
-  req.session.password = null
+  // req.session.email = null
+  // req.session.password = null
+  req.session = null;
+  req.logout();
   res.send('user is logged out')
 })
+
+//auth with google
+router.get('/google',
+  passport.authenticate('google', {
+          scope:
+              ['email', 'profile']
+      }
+  ));
+
+// router.get("/failed", (req, res) => {
+//   res.send("Failed")
+// })
+// router.get("/success", (req, res) => {
+//   res.redirect(request.session.lastUrl || '/')
+//   // res.send(`Welcome ${req.user.email}`)
+// })
+
+//callback route for google
+router.get('/google/callback',
+  passport.authenticate('google', {
+      failureRedirect: '/failed',
+  }),
+  (req, res) => {
+    // res.send(req.user)
+    res.redirect('/')
+  }
+);
 
 module.exports = router
