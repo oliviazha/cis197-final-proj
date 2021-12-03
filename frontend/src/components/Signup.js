@@ -18,21 +18,23 @@ const Signup = () => {
 
   return (
     <div className="signup">
-      <h1>Sign Up</h1>
-      Email:
-      <br />
-      <input onChange={e => setEmail(e.target.value)} />
-      <br />
-      Password:
-      <br />
-      <input onChange={e => setPassword(e.target.value)} />
-      <br />
-      <button type="button" onClick={() => createUser()}> Sign Up </button>
-      <a className="google-btn" href="/account/google">Join with Google</a>
-      <p>
-        Already have an account?&nbsp;
-        <Link to="/login">Log in here!</Link>
-      </p>
+      <div className="signup-page">
+        <h1>Sign Up</h1>
+        Email
+        <br />
+        <input onChange={e => setEmail(e.target.value)} />
+        <br />
+        Password
+        <br />
+        <input onChange={e => setPassword(e.target.value)} />
+        <br />
+        <button type="button" onClick={() => createUser()}> Sign Up </button>
+        <a className="google-btn" href="/account/google">Join with Google</a>
+        <p>
+          Already have an account?&nbsp;
+          <Link to="/login">Log in here!</Link>
+        </p>
+      </div>
     </div>
   )
 }

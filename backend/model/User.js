@@ -6,7 +6,7 @@ const userSchema = new Schema({
   password: { type: String },
   googleId: { type: String, unique: true },
   savedPrompts: [{ type: String}],
-  completedPrompt: [{ type: String}]
+  completedPrompts: [{ type: String}]
 })
 
 module.exports = model('User', userSchema)

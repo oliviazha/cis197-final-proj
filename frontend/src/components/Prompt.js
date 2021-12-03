@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import WordList from '../WordList.json'
 import axios from 'axios'
+import Timer from './Timer.js'
 
 const Prompt = ({isLoggedIn, currUser, setCurrUser}) => {
 
@@ -11,11 +12,14 @@ const Prompt = ({isLoggedIn, currUser, setCurrUser}) => {
   const [noun, setNoun] = useState(WordList.noun[getRandomInt(12)])
   const [verb, setVerb] = useState(WordList.verb[getRandomInt(12)])
   const [currPrompt, setCurrPrompt] = useState(adj.concat(' ', noun, ' ', verb))
+  const [isSaved, setIsSaved] = useState(false)
+  const [showTimer, setShowTimer] = useState(false)
 
   const newPrompt = () => {
     setAdj(WordList.adj[getRandomInt(12)])
     setNoun(WordList.noun[getRandomInt(12)])
     setVerb(WordList.verb[getRandomInt(12)])
+    setIsSaved(false)
   }
 
   useEffect(async () => {
@@ -26,11 +30,7 @@ const Prompt = ({isLoggedIn, currUser, setCurrUser}) => {
     const { email } = currUser
     const { data } = await axios.post('/dashboard/saveprompt', { email, currPrompt})
     setCurrUser(data)
-    console.log('data from saveprompt', data)
-    // console.log('updatedCurrUser', currUser)
-    // if (!data.answer) {
-    //   window.alert('error answering question')
-    // }
+    setIsSaved(true)
   }
   
   return (
@@ -39,17 +39,17 @@ const Prompt = ({isLoggedIn, currUser, setCurrUser}) => {
       <h2> {adj} </h2>
       <h2> {noun} </h2>
       <h2> {verb} </h2>
-      <button type="button" onClick={() => {
-        newPrompt()
-        // setCurrPrompt(adj.concat(' ', noun, ' ', verb))
-        }}> 
-      New Prompt </button>
       {isLoggedIn && (     
         <div> 
-          <button type="button" onClick={() => savePrompt()}> Save </button>
-          <button type="button" onClick={() => console.log('timer action goes here')}> Timer </button>
+          {!isSaved && <button type="button" onClick={() => savePrompt()}> Save </button>}
+          <button type="button" onClick={() => setShowTimer(true)}> Timer </button>
         </div>
       )}
+      <button type="button" onClick={() => {
+        newPrompt()
+        }}> 
+      New Prompt </button>
+      {showTimer && <Timer currUser={currUser} setCurrUser={setCurrUser} currPrompt={currPrompt} setShowTimer={setShowTimer}/>}
     </div>
   )
 }
