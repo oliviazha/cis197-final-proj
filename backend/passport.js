@@ -40,18 +40,5 @@ passport.use(new GoogleStrategy({
               return done(err, user);
           }
       })
-    // function(accessToken, refreshToken, profile, cb) {
-    //   User.findOrCreate({ email: profile.displayName, googleId: profile.id }, function (err, user) {
-    //     console.log('new user', user.googleId)
-    //     return cb(err, user)
-    //   })
-    // async (accessToken, refreshToken, profile, done) => {
-    //   // console.log(profile)
-    //   try {
-    //     const user = await User.findOrCreate({ email: profile.displayName, googleId: profile.id })
-    //     return done(null, profile)
-    //   } catch (err) {
-    //     return done(error, null)
-    //   }
     }
 ));

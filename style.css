@@ -94,7 +94,16 @@ input {
 
 
 .prompt, .dashboard {
-  margin: 40px 30px
+  margin: 40px 30px;
+}
+
+.prompt {
+  text-align: center;
+}
+
+.boxidea {
+  width: 60%;
+  max-height: 260px;
 }
 
 .about, .signup, .login {
@@ -116,9 +125,6 @@ input {
   overflow: auto;
 }
 
-/* .about-text {
-  padding: 40px
-} */
 
 .column {
   float: left;
@@ -139,6 +145,7 @@ input {
   display: table;
   clear: both;
 }
+
 
 .savedPrompt {
   border-style: solid;
@@ -171,4 +178,5 @@ input {
   border: 1px solid #999;
   overflow: auto;
 }
+
 

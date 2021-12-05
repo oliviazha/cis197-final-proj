@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const Timer = ({currUser, setCurrUser, currPrompt, setShowTimer}) => {
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(5);
+  const [minutes, setMinutes] = useState(15);
+  const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
 
   const toggle = () => {
@@ -11,8 +11,8 @@ const Timer = ({currUser, setCurrUser, currPrompt, setShowTimer}) => {
   }
 
   const reset = () =>  {
-    setMinutes(0);
-    setSeconds(5);
+    setMinutes(15);
+    setSeconds(0);
     setIsActive(false);
   }
 

@@ -1,8 +1,13 @@
 {
   "adj": ["happy", "sad", "colorful", "unexpected", "magical", "independent", "delicate", "fluffy", "edgy", "dark", 
-    "stressed", "peaceful"],
-  "noun": ["cat", "dog", "the park", "stairs", "kitchen", "castle", "your favorite song", "girl", "city", "night", 
-    "dusk", "autumn"],
-  "verb": ["stargazing", "dancing", "running", "studying", "flying", "falling", "floating", "daydreaming", "laughing", "walking", 
-    "traveling", "reading"]
+    "stressed", "peaceful", "powerful", "comedic", "colorful", "calm", "whimsical", "amusing", "gloomy", "lively", 
+    "rainy", "chilly", "bright", "warm", "spacious", "modern", "retro", "classic", "futuristic", "minimalistic"],
+  "noun": ["cat", "dog", "the park", "stairs", "kitchen", "castle", "song", "girl", "city", "night", 
+    "dusk", "autumn",  "winter",  "spring",  "summer",  "playground",  "ocean",  "mountain",  "dawn",  "streets",  
+    "skyscrapers", "picnic", "photograph", "bathroom", "tree", "forest", "boat", "1920s", "outer space", "school",
+    "ballroom", "mall", "parking lot", "adventure", "clouds", "rivers", "island", "crowd", "couple", "family",
+    "rabbit", "mermaid", "unicorn", "dragon", "library", "grocery store", "band", "cafe", "desk", "portrait"],
+  "verb": ["stargazing", "dancing", "running", "studying", "flying", "falling", "floating", "daydreaming", "napping", "walking", 
+    "traveling", "reading", "fighting", "sleeping", "eating", "snacking", "wondering", "destroying", "admiring", "balancing",
+    "playing", "changing", "cooking", "partying", "celebrating", "camping", "swimming", "exercising", "flowing", "painting"]
 }

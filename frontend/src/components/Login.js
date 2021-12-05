@@ -25,7 +25,7 @@ const Login = () => {
     <div className="login">
       <div className="login-page">
         <h1>Sign In</h1>
-        Email
+        Username
         <br />
         <input onChange={e => setEmail(e.target.value)} />
         <br />
