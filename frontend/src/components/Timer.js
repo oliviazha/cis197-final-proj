@@ -66,10 +66,10 @@ const Timer = ({currUser, setCurrUser, currPrompt, setShowTimer}) => {
               <h1> {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1>
             </div>
             <div className="row">
-              <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
+              <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} style={{float: 'left'}} onClick={toggle}>
                 {isActive ? 'Pause' : 'Start'}
               </button>
-              {isActive && <button className="button" onClick={reset}>
+              {isActive && <button className="button" onClick={reset} style={{float: 'left'}}>
                 Reset
               </button>}
               <button type="button" style={{float: 'right'}} onClick={() => {

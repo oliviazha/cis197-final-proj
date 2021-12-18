@@ -60,6 +60,10 @@ button:hover {
   color:rgb(255, 17, 148)
 }
 
+.google-btn {
+  padding: 16px;
+}
+
 .dashboard-toggle {
   background-color:#c3f8ff;
   border-radius: 5px;

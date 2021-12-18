@@ -17,9 +17,9 @@ const Prompt = ({isLoggedIn, currUser, setCurrUser}) => {
   const [showTimer, setShowTimer] = useState(false)
 
   const newPrompt = () => {
-    setAdj(WordList.adj[getRandomInt(12)])
-    setNoun(WordList.noun[getRandomInt(12)])
-    setVerb(WordList.verb[getRandomInt(12)])
+    setAdj(WordList.adj[getRandomInt(30)])
+    setNoun(WordList.noun[getRandomInt(40)])
+    setVerb(WordList.verb[getRandomInt(30)])
     setIsSaved(false)
   }
 

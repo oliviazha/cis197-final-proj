@@ -10,6 +10,7 @@ const Signup = () => {
   const createUser = async () => {
     const { data } = await axios.post('/account/signup', { email, password })
     if (data === 'user created') {
+      await axios.post('/account/login', { email, password })
       navigate('../')
     } else {
       window.alert('sign up error! try again')
@@ -20,7 +21,7 @@ const Signup = () => {
     <div className="signup">
       <div className="signup-page">
         <h1>Sign Up</h1>
-        Email
+        Username
         <br />
         <input onChange={e => setEmail(e.target.value)} />
         <br />
